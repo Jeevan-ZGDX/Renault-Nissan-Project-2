@@ -1,0 +1,570 @@
+No,Question,Answer
+1,What is the Cylinder Block and its function?,"The cylinder block is the main structure of the engine. It houses the cylinders, coolant passages, oil galleries, and supports major components like the crankshaft and camshaft.
+Function: Provides structural support and maintains alignment of moving parts.
+"
+2,What is the Crankshaft and what is its function?,"The crankshaft converts the reciprocating motion of the piston into rotary motion.
+Function: Deliver rotational power to the transmission and accessories.
+"
+3,What is the Camshaft and its function?,"The camshaft controls opening and closing of intake and exhaust valves.
+Function: Ensures correct valve timing for efficient combustion.
+"
+4,What is the Piston and its function?,"The piston moves up and down inside the cylinder during the combustion cycle.
+Function: Transfers combustion force to the crankshaft via the connecting rod.
+"
+5,What is the Connecting Rod and its function?,"It connects the piston to the crankshaft.
+Function: Transmits piston motion to the crankshaft.
+"
+6,What is the Cylinder Head and what does it do?,"The cylinder head sits on top of the cylinder block and contains valves, ports, and combustion chamber.
+Function: Seals the combustion chamber and supports the valve mechanism.
+"
+7,What are Valves and their its functions?,"There are two types: Intake valve and Exhaust valve.
+Function:
+Intake valve: Allows air–fuel mixture (or air) into the cylinder.
+Exhaust valve: Allows burned gases to exit the cylinder.
+"
+8,What is the Flywheel and why is its important?,"A heavy rotating component attached to the crankshaft.
+Function: Smoothens engine rotation by storing rotational energy and reduces vibration.
+"
+9,What is the Oil Pump and its function?,"Pump that circulates lubricating oil under pressure.
+Function: Lubricates moving parts and reduces wear.
+"
+10,What is the Fuel Injector and its function?,"A device that sprays fuel into the combustion chamber or intake port.
+Function: Ensures proper fuel atomization for efficient combustion.
+"
+11,What is the Turbocharger and how does it work?,"A forced induction device powered by exhaust gases.
+Function: Increases air intake pressure, boosts power and improves efficiency.
+
+"
+12,What is the Water Pump and its role?,"Circulates coolant through the engine and radiator.
+Function: Maintains engine temperature and prevents overheating.
+"
+13,What is the Intake Manifold?,"A passage that distributes air (or air–fuel mixture) to the cylinders.
+Function: Ensures even airflow to all cylinders.
+"
+14,What is the Exhaust Manifold?,"A passage that collects exhaust gases from cylinders.
+Function: Directs exhaust to the turbocharger or exhaust pipe smoothly.
+"
+15,What is the Timing Chain/Belt?,"A drive mechanism linking the crankshaft and camshaft.
+Function: Ensures precise timing of valve operation.
+"
+16,What is the Spark Plug (Petrol Engine)?,"A device that ignites the air–fuel mixture using electric spark.
+Function: Initiates combustion.
+"
+17,What is the Glow Plug (Diesel Engine)?,"A heating device.
+Function: Helps cold starting by warming the combustion chamber.
+
+"
+18,What is the Oil Filter’s purpose?,"Removes dirt and metal particles from engine oil.
+Function: Keeps oil clean and prevents wear.
+"
+19,What is the Air Filter and its function?,"A filtration device for incoming air.
+Function: Prevents dust from entering cylinders and damaging parts.
+"
+20,What is the Radiator and its function?,"A heat exchanger that cools the coolant.
+Function: Controls engine temperature by transferring heat to the atmosphere.
+"
+21,What is the Turbo charger and its function?,"A turbocharger is a device that increases an engine’s power and efficiency by forcing more air into the combustion chamber.
+How it works (simple explanation):
+Exhaust gases from the engine spin a turbine.
+This turbine is connected to a compressor wheel.
+The compressor pulls in fresh air and compresses it.
+Compressed (high-pressure) air enters the engine, allowing more fuel to burn.
+More air + more fuel = more power output without increasing engine size.
+
+
+"
+22,What is a Leak Test?,"A Leak Test is a quality inspection process used to check whether a component, system, or assembly has any unwanted air, gas, oil, coolant, or fuel leakage
+"
+23,Why cylinder bore coating required?,"To reduce friction between piston–ring and cylinder
+Improve wear resistance
+Allow use of aluminium blocks without cast iron liners
+Improve heat transfer
+Increase engine efficiency and life
+"
+24,What is the function of the bore coating?,"Provide a hard, low friction running surface
+Prevent wear of aluminium cylinder
+Reduce oil consumption
+Reduce piston ring wear
+Improve engine performance and emissions
+"
+25,What is the typical thickness of bore coating?,"Normally 0.08 mm to 0.15 mm (80–150 microns), depending on process and OEM specification.
+
+
+"
+26,Why do engines use bore coating instead of cast-iron liners?,"Weight reduction
+Better heat transfer
+Lower friction
+Fewer machining steps
+Improved fuel economy
+
+"
+27,Why pre-heating required before bore coating?,"Purpose: Improve adhesion of bore coating.
+"
+28,"Advantages of Mirror Honing
+Lower friction
+Improved fuel efficiency
+Longer ring and bore coating life
+Lower oil consumption
+Faster engine break-in
+Better performance in high-speed engines
+
+
+29. What is the main failure mode of bore coating?","Peeling / Delamination
+Cracking
+Uneven thickness
+Poor adhesion
+Overheating damage
+Piston scuffing due to improper honing
+"
+30,"What are the causes for bore coating failure?
+Common reasons include:
+Poor surface preparation
+Incorrect spray parameters
+Contamination (oil, coolant) before coating
+Wrong coating thickness
+Poor bonding due to low roughness
+Improper honing after coating
+
+31. How inspect bore coating quality?","Thickness measurement (eddy current or ultrasonic)
+Adhesion test
+Surface roughness measurement (Ra, Rz)
+Metallographic section check
+Visual inspection for cracks or peeling
+Bore geometry measurement
+"
+32,What are the benefits of coated bores in modern engines?,"Higher power density
+Lower emissions
+Reduced fuel consumption
+Improved durability
+Lightweight engine design
+
+
+
+"
+33,What is crosshatch angle and why is it important?,"Crosshatch angle (usually 30°–45°) is created during honing.
+Purpose:
+Retains lubricating oil
+Reduces friction
+Prevents piston scuffing
+Ensures ring sealing
+"
+34,What is a Cylinder Head?,"The cylinder head is a key engine component mounted on top of the cylinder block.
+Function:
+Seals the combustion chamber
+Houses valves, ports, injectors, spark plugs, and cooling/oil passages
+"
+35,What are the main parts of a Cylinder Head?,"Common parts include:
+Intake valves
+Exhaust valves
+Valve seats
+Valve guides
+Camshaft(s) (in OHC engines)
+Rocker arms
+Valve springs
+Combustion chamber
+Injector bore / Spark plug bore
+Intake & exhaust ports
+Cooling jackets
+Oil passages
+Cam caps / Bearing caps
+
+"
+36,What is the function of Intake Valves?,"Intake valves allow fresh air or air–fuel mixture to enter the combustion chamber.
+"
+37,What is the function of Exhaust Valves?,"Exhaust valves release burned gases from the combustion chamber into the exhaust manifold.
+"
+38,Describe about Valve Seats?,"Valve seats are hardened rings where the valve face contacts and seals.
+Function:
+Provide a tight seal
+Withstand high temperature and pressure
+"
+39,Describe about Valve Guides?,"Guides are cylindrical sleeves that allow the valve stem to move up and down.
+Function:
+Maintain valve alignment
+Control oil flow to the valve stem
+"
+40,What is a Combustion Chamber?,"The hollow space between the piston crown and cylinder head where the air–fuel mixture burns.
+
+"
+41,Explain about Intake & Exhaust Ports?,"Machined passages inside the cylinder head.
+Function:
+Intake ports guide air into the cylinder
+Exhaust ports channel gases out of the engine
+"
+42,What is the role of the Camshaft in the Cylinder Head? ,"Camshaft controls opening and closing of valves through lobes and actuators.
+"
+43,What is the role of Rocker Arms?,"Lever-like components between camshaft and valve.
+Function:
+Transfer cam motion to operate valves.
+"
+44,What are Valve Springs?,"Springs fitted on valves to keep them closed when the cam is not pressing.
+Function:
+Ensure valve returns to seat without bouncing.
+.
+"
+45,What is a Spark Plug Bore?,"A threaded hole in the head where the spark plug is installed (petrol engines).
+Function:
+Ignite air–fuel mixture.
+"
+46,What are Cooling Jackets in the Cylinder Head?,"Passages for coolant flow around high-temperature areas.
+Function:
+Maintain thermal stability
+Prevent overheating
+"
+47,What are Cam Caps or Bearing Caps?,"Caps fixed on the cylinder head to hold the camshaft in place.
+Function:
+Maintain camshaft alignment and rotation
+"
+48,What is the purpose of the Cylinder Head Gasket Surface?,"A precision-machined flat surface where the head gasket seals between block and head.
+Function:
+Prevent leakage of combustion gases, coolant, and oil.
+"
+49,Why is the Cylinder Head critical to engine performance?,"Because it controls:
+Airflow quality
+Combustion efficiency
+Emission levels
+Valve timing
+Thermal management
+"
+50,"How VVT Works (Simple Explanation)
+VVT (Variable Valve Timing) is an engine technology that automatically adjusts the timing of the intake and/or exhaust valves according to engine speed, load, and driving conditions to improve engine performance and efficiency.
+The engine ECU controls an Oil Control Valve (OCV).
+OCV sends oil pressure to a cam phaser.
+The cam phaser rotates the camshaft slightly (advance/retard).
+This changes the valve timing dynamically.
+
+51.What is the benefit of VVT?
+1. Improved Fuel Efficiency
+2. Increased Power at High RPM
+At high speeds, advanced timing allows more air into the cylinder → higher power and better top-end performance.
+3. Better Low-End Torque
+4. Reduced Emissions
+
+52.Why does rust form on machined engine parts?","Rust Due to:
+Moisture exposure
+No rust preventive coating
+Improper storage
+High humidity
+Coolant contamination & Coolant concentration
+
+
+
+"
+53,"How to prevent rust after machined engine parts?
+Rust Prevention Action:
+Apply rust preventive oil (RPO)
+Use VCI bags
+Maintain humidity < 55%
+Proper Coolant maintenance
+Immediate packing after machining
+Using VCI tablet, 
+
+54. What is the test conducted in Assembly FTB (Firing Test Bench)? ","Final inspection where the engine is tested for:
+Power
+Emission & Leakage
+Noise/vibration, Sensor functionality
+Overall performance validation
+"
+55,What type of Analysis used to solve quality issues?,"Use tools like:
+5 Why Analysis
+Fishbone diagram (Man, Machine, Method, Material, Measurement, Environment)
+Is-Is Not analysis
+Pareto analysis
+Fault Tree Analysis
+Always verify root cause using data (SPC, CMM, EOL test logs).
+
+
+"
+56,What are the common causes of compression failure in a new engine?,"Wrong piston rings orientation
+Excessive cylinder bore wear or roughness
+Valve leakage
+Improper head gasket thickness
+Incorrect cam timing
+Poor surface finish on cylinder head/block
+Bore taper/ovality
+"
+57,How to validate supplier quality of  the engine components?,"Incoming inspection + AQL sampling
+PPAP (Production Part Approval Process)
+Dimensional CMM report
+Material testing (Spectro, hardness, microstructure)
+Functional tests (injector flow test, valve leakage test)
+Random destructive testing
+Supplier process audit
+"
+58,"How do you prevent mixing of different engine model variants on the line?
+Poka-yoke fixtures
+Colour coding
+MES-level digital interlocks
+Barcode scanning at each stage
+Variant-specific tooling or torque programs
+
+
+
+59. what happens when an incorrect torque is applied in engine assembly tightening process?","Under-torque → leakage, loosening, gasket failure
+Over-torque → bolt elongation, thread damage, distortion
+Engine assembly depends heavily on torque accuracy."
+60,What are the causes of NVH issue in engines testing?,"Crankshaft imbalance
+Loose fasteners
+Incorrect valve timing
+Poor fuel injection timing
+Worn bearings, Excessive piston slap
+Unbalanced rotating assembly "
+61,"What causes uneven hardness on gear teeth?
+Causes:
+Nonuniform case depth
+Poor quench agitation
+Incorrect load placement
+Remedies:
+Improve basket arrangement
+Maintain quench oil circulation
+Ensure uniform furnace temperature
+
+62. What is FMEA and how do you use it?","FMEA (Failure Mode & Effects Analysis) identifies:
+Potential failure modes
+Severity, occurrence & detection rating
+RPN (Risk Priority Number)
+Use FMEA to:
+Prioritize critical checks
+Design effective controls
+Prevent warranty failures
+"
+63,"Defect: Hard Gear Shifting causes & remedies
+Possible Causes:
+Synchronizer wear or damage
+Low/contaminated oil
+Clutch not disengaging fully
+Bent selector fork
+Cable/shift linkage misadjustment
+Remedies:
+Replace worn synchronizer rings
+Check/replace gearbox oil
+Adjust or replace clutch
+Correct selector fork alignment
+Adjust shifter cables
+
+64. Defect: Gear Slipping Out of Gear
+Possible Causes:
+Worn dog teeth on gear
+Weak detent spring
+Worn selector fork
+Misaligned shift rail
+Excessive shaft end float
+Remedies:
+Replace worn gears
+Replace detent spring
+Correct fork wear or re-align
+Set proper end float with shims
+
+
+
+65. Causes of Oil Leakage in gear box & Remedies?
+Possible Causes:
+Worn or damaged shaft oil seals
+Poor housing surface finish
+Excessive shaft runout
+Casting porosity
+Blocked breather creating internal pressure
+Remedies:
+Replace seals with correct lip type
+Improve housing surface finish (Ra control)
+Check & correct shaft runout
+Repair/replace porous housing
+Clean or replace breather
+
+66. Why Gearbox Overheating during running?
+Possible Causes:
+Low oil level
+Excessive friction (incorrect oil)
+Overloaded gearbox
+Blocked oil passages
+High ambient temperature without cooling
+
+67. Why Gearbox Humming Noise?
+Possible Causes:
+Bearing wear
+Gear meshing problem
+Low oil level
+Shaft misalignment
+Loose bolts
+
+
+
+68. Defect: Gearbox Unable to Engage gear shifting
+Possible Causes:
+Broken gear selector fork
+Damaged shift rail
+Bent gear shift rod
+Synchronizer ring wear
+Hub sleeve jam
+
+69. Why Diff (Final Drive) Noise in gear Box?
+Possible Causes:
+Incorrect crown-pinion backlash
+Worn differential bearings
+Incorrect tooth contact pattern
+Low oil
+
+70. What causes porosity in casting process HPDC?
+Causes:
+Entrapped air during high-speed injection
+Excess lubricant spray
+Poor die venting
+High melt temperature
+Inadequate vacuum
+Remedies:
+Use proper vacuum levels (<50 mbar)
+Optimize gate design
+Reduce lubricant over-spraying
+Improve die temperature control
+
+71. What causes blow holes in castings?","Gas entrapment, moisture, poor die lubrication.
+"
+72,What causes gear hardening cracks?,"Incorrect quench rate, high carbon content, thermal stress.
+"
+73,What should you do when see an abnormality?,"Stop → Segregate → Inform → Record (no-running with defects).
+"
+74,Which is more important: defect detection or defect prevention?,"Defect Prevention is the improvement
+"
+75,What is torque angle?,"Applying torque and then rotating bolt by specified angle for consistent clamping.
+"
+76,"Purpose of Inspection Check Sheet?
+An inspection check sheet is a structured document used to verify that a product, process, or machine meets required standards.
+Its main purposes are:
+To Ensure Consistent Quality
+To Verify Critical Dimensions & Parameters
+To Provide Traceability
+To Detect Defects Early (Prevention)
+
+
+
+77.Why Gauge Calibration Required?","Gauge calibration ensures that measuring instruments give accurate, reliable, and traceable measurements.
+In manufacturing—especially automotive, engine, and powertrain—even small measurement errors can lead to huge quality losses.
+"
+78,"Who is the Responsible for Quality Parts Output?
+Primary responsibility - Machine operators, need to ensure SOP, N1 check, check sheet, stop when abnormality found.
+Production Supervisors / Line Leaders - Ensure process discipline and manpower training
+Process QA (Quality Assurance) - Responsible for preventing defects, not producing parts
+QC Inspectors (Quality Control) - Visual and burr inspection, Responsible for detecting defects.
+Maintenance Team - Responsible for machine health & consistency
+Engineering & tooling team - Responsible for process design & correctness.
+
+79. What Happens If Crankshaft is Not Hardened?","Bearing wear
+Journal scoring
+ Crankshaft bending or cracking
+ Low oil pressure
+Engine knock
+Early engine failure
+In high-performance or heavy-duty engines, failure is guaranteed without hardening.
+
+"
+80,What Impact on Quality When Preventive Maintenance Fails?,"Bearing wear
+ Machine life poor
+Safety risk – Clamp failure, Oil leak
+Increased vibration – Tool life poor, Noise 
+ Loss of process capability – CP, CPK results
+ Poor surface finish
+"
+81,Purpose of Poka-Yoke (Fool Proof)?,"Poka yoke meaning - 
+Poka-yoke is a method to prevent mistakes from happening, or to detect them immediately so defects do not pass to the next process
+Production → To prevent defect
+Process → Make process fool proof & Improve process reliability
+QC → Checks and detects and eliminates human error
+Management → Reduce rework & Scrap
+"
+82,Where Hardening Is Done on Crankshaft?,"Main journals
+Crank pins (rod journals)
+Fillet radius
+Thrust faces (sometime)
+
+
+"
+83,"How does ensure product traceability?
+Using:
+Barcodes
+Laser marking
+Batch tags
+Inspector stamps
+
+84. What type of checks does QC team perform?
+Dimensional inspection
+Attribute checks
+Visual checks
+Functional tests
+Torque checks
+Leak tests
+Hardness checks
+
+85. What is the difference between QA and QC?
+QA (Quality Assurance):
+Process-oriented
+Prevents defects
+Focuses on system, standards, audits, procedures
+QC (Quality Control):
+Product-oriented
+Detects defects
+Focuses on measurements, inspection, testing
+
+86. What causes porosity in casting process HPDC?
+Causes:
+Entrapped air during high-speed injection
+Excess lubricant spray
+Poor die venting
+High melt temperature
+Inadequate vacuum
+Remedies:
+Use proper vacuum levels (<50 mbar)
+Optimize gate design
+Reduce lubricant over-spraying
+Improve die temperature control
+
+87. What is the first critical process in gear machining?","Gear Blank Preparation (Turning).
+Purpose: Achieve correct outer diameter, face width, and bore size before gear teeth are cut.
+"
+88,What is Gear Hobbing?,"A cutting process using a rotating hob to generate gear teeth.
+Purpose: Produce accurate gear tooth profile and spacing."
+89,Why is Gear Hobbing considered critical?,"Creates the basic tooth form
+Controls pitch accuracy
+Influences noise and performance of gearbox
+"
+90,What is Gear Shaving?,"A finishing operation using a serrated cutter to smooth and correct tooth errors.
+Purpose: Improve surface finish, remove burrs, and correct minor profile deviations.
+"
+91,What is Gear Grinding?,"A high-precision finishing process using abrasive wheels after hardening.
+Purpose:
+Achieve high dimensional accuracy
+Remove heat treatment distortion
+Improve tooth surface finish for low noise
+"
+92,Why is Heat Treatment important in gear making?,"Processes like carburizing, nitriding, quenching harden the gear teeth.
+Benefits:
+Improved wear resistance
+Increased gear life
+Higher load-carrying capacity
+"
+93,What is the purpose of Gear Lapping?,"Gear lapping uses a lapping compound to smooth tooth surfaces.
+Purpose:
+Reduce noise
+Improve contact pattern
+Remove high spots
+"
+94,What is the importance of Tooth Profile and Lead accuracy?,"These parameters ensure proper meshing and smooth power transmission.
+Poor accuracy causes:
+Noise
+Vibration
+Premature failure
+
+
+"
+96,What is Gear Run-Out?,"Misalignment causing wobble during rotation.
+Impact:
+Noise
+Vibration
+Uneven load distribution → failure
+"
+96,What are final inspections in gear machining?,"Pitch measurement
+Profile & lead measurement
+Tooth contact analysis
+Bore & OD measurement
+Surface roughness
+Hardness checking
+Purpose: Ensure gear meets all specifications."

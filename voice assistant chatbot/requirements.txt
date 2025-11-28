@@ -1,0 +1,7 @@
+Flask
+vosk
+pyttsx3
+pydub
+rapidfuzz
+soundfile
+werkzeug

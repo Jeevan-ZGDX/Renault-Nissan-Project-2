@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Offline Voice Assistant</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="container">
+<h1>Offline Voice Assistant</h1>
+
+
+<section class="controls">
+<div>
+<button id="startBtn">🎙️ Start Recording</button>
+<button id="stopBtn" disabled>⏹️ Stop</button>
+</div>
+
+
+<div class="text-entry">
+<input id="textInput" placeholder="Type a question" />
+<button id="sendText">Send</button>
+</div>
+
+
+</section>
+
+
+<section class="chat" id="chat">
+<!-- messages appended here -->
+</section>
+
+
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
