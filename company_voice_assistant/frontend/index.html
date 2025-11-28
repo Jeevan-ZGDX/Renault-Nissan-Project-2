@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Company Voice Assistant (Localhost)</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 420px;
+      max-width: 95vw;
+      background: #020617;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      border: 1px solid #1f2937;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .chat-window {
+      background: #020617;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+      padding: 10px;
+      height: 260px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+
+    .msg {
+      margin-bottom: 10px;
+      display: flex;
+    }
+
+    .msg.user {
+      justify-content: flex-end;
+    }
+
+    .msg-bubble {
+      padding: 8px 10px;
+      border-radius: 12px;
+      max-width: 80%;
+      line-height: 1.3;
+      word-wrap: break-word;
+    }
+
+    .msg.assistant .msg-bubble {
+      background: #111827;
+      border-bottom-left-radius: 2px;
+    }
+
+    .msg.user .msg-bubble {
+      background: #1d4ed8;
+      border-bottom-right-radius: 2px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-start {
+      background: #22c55e;
+      color: #022c22;
+    }
+
+    .btn-stop {
+      background: #ef4444;
+      color: #fef2f2;
+    }
+
+    .btn-muted {
+      background: #111827;
+      color: #9ca3af;
+    }
+
+    .status-text {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .dot-anim {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #facc15;
+      margin-left: 4px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.8); opacity: 0.3; }
+      100% { transform: scale(1); opacity: 0.9; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="status-dot"></div>
+      <div>
+        <div class="title">Company Voice Assistant</div>
+        <div class="subtitle">Localhost · Voice session</div>
+      </div>
+    </div>
+
+    <div class="chat-window" id="chat-window"></div>
+
+    <div class="controls">
+      <div>
+        <button class="btn-start" id="start-btn">🎙 Start Session</button>
+        <button class="btn-stop" id="stop-btn" disabled>⏹ Stop</button>
+      </div>
+      <div>
+        <button class="btn-muted" id="mute-btn">🔊 Voice: ON</button>
+        <div class="status-text" id="status-text">Idle</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ====== CONFIG ======
+    const API_URL = "http://localhost:8000/chat"; // backend URL
+
+    // ====== State ======
+    let sessionActive = false;
+    let recognition = null;
+    let recognizing = false;
+    let muted = false;
+
+    const ChatRole = { USER: "user", ASSISTANT: "assistant" };
+
+    const chatWindow = document.getElementById("chat-window");
+    const startBtn = document.getElementById("start-btn");
+    const stopBtn = document.getElementById("stop-btn");
+    const muteBtn = document.getElementById("mute-btn");
+    const statusText = document.getElementById("status-text");
+
+    // ====== Chat UI ======
+    function appendMessage(role, text) {
+      const msg = document.createElement("div");
+      msg.className = "msg " + (role === ChatRole.USER ? "user" : "assistant");
+      const bubble = document.createElement("div");
+      bubble.className = "msg-bubble";
+      bubble.textContent = text;
+      msg.appendChild(bubble);
+      chatWindow.appendChild(msg);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    function setStatus(text, listening = false) {
+      statusText.innerHTML = text + (listening ? '<span class="dot-anim"></span>' : "");
+    }
+
+    // ====== TTS ======
+    function speakText(text, onEnd) {
+      if (muted || !window.speechSynthesis) {
+        if (onEnd) onEnd();
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.onend = () => onEnd && onEnd();
+      utterance.onerror = () => onEnd && onEnd();
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // ====== Mic Access ======
+    async function requestMicrophoneAccess() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach(track => track.stop());
+        return true;
+      } catch (err) {
+        console.error("Microphone access denied:", err);
+        setStatus("Mic access denied");
+        alert("Microphone access is required. Please grant permission and try again.");
+        return false;
+      }
+    }
+
+    // ====== STT ======
+    function initRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("Speech recognition not supported. Use Chrome/Edge on desktop.");
+        return null;
+      }
+      const rec = new SpeechRecognition();
+      rec.lang = "en-US";
+      rec.continuous = false;
+      rec.interimResults = true;
+      rec.maxAlternatives = 1;
+
+      rec.onstart = () => {
+        recognizing = true;
+        setStatus("Listening...", true);
+      };
+
+      rec.onend = () => {
+        recognizing = false;
+        if (sessionActive) setStatus("Processing...");
+      };
+
+      rec.onerror = (event) => {
+        console.error("STT error:", event.error);
+        recognizing = false;
+        if (event.error === "no-speech") {
+          setStatus("No speech detected, try again");
+          if (sessionActive) setTimeout(() => startListening(), 1000);
+        } else if (event.error === "network") {
+          setStatus("Network error");
+        } else {
+          setStatus("Listening error: " + event.error);
+        }
+      };
+
+      rec.onresult = (event) => {
+        let transcript = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const isFinal = event.results[i].isFinal;
+          transcript += event.results[i][0].transcript;
+          if (isFinal) {
+            transcript = transcript.trim();
+            if (transcript) {
+              console.log("Recognized (final):", transcript);
+              appendMessage(ChatRole.USER, transcript);
+              callBackend(transcript);
+            }
+          }
+        }
+      };
+
+      return rec;
+    }
+
+    function startListening() {
+      if (!sessionActive) return;
+      if (!recognition) {
+        recognition = initRecognition();
+        if (!recognition) return;
+      }
+      try {
+        recognition.start();
+      } catch (e) {
+        console.warn("start error:", e);
+        if (e.message.includes("already started")) {
+          recognition.abort();
+          setTimeout(() => startListening(), 100);
+        }
+      }
+    }
+
+    function stopListening() {
+      if (recognition && recognizing) {
+        recognition.stop();
+      }
+    }
+
+    // ====== Backend call ======
+    async function callBackend(message) {
+      setStatus("Processing...");
+      try {
+        const payload = {
+          message,
+          session_id: null,
+          user_type: "customer"
+        };
+
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+        const reply = data.reply || "I had trouble answering that.";
+        const endSession = data.end_session || false;
+
+        appendMessage(ChatRole.ASSISTANT, reply);
+        setStatus("Speaking response...");
+
+        speakText(reply, () => {
+          if (endSession) {
+            sessionActive = false;
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            setStatus("Session ended");
+          } else if (sessionActive) {
+            setStatus("Ready to listen", true);
+            startListening();
+          }
+        });
+
+        if (endSession) {
+          sessionActive = false;
+          startBtn.disabled = false;
+          stopBtn.disabled = true;
+        }
+      } catch (err) {
+        console.error(err);
+        appendMessage(ChatRole.ASSISTANT, "Error: Could not reach server. Make sure backend is running.");
+        setStatus("Error");
+        if (sessionActive) {
+          setTimeout(() => {
+            if (sessionActive) {
+              setStatus("Ready to listen", true);
+              startListening();
+            }
+          }, 2000);
+        }
+      }
+    }
+
+    // ====== Session control ======
+    async function startSession() {
+      if (sessionActive) return;
+      
+      setStatus("Requesting mic access...");
+      const hasMicAccess = await requestMicrophoneAccess();
+      if (!hasMicAccess) {
+        setStatus("Idle");
+        return;
+      }
+
+      sessionActive = true;
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+      chatWindow.innerHTML = "";
+
+      const intro = "Hi, I'm your company assistant. How can I help you today?";
+      appendMessage(ChatRole.ASSISTANT, intro);
+      setStatus("Speaking...");
+      speakText(intro, () => {
+        if (sessionActive) {
+          setStatus("Ready to listen", true);
+          startListening();
+        }
+      });
+    }
+
+    function stopSession() {
+      sessionActive = false;
+      stopListening();
+      window.speechSynthesis.cancel();
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      setStatus("Idle");
+      appendMessage(ChatRole.ASSISTANT, "Voice session stopped.");
+    }
+
+    // ====== Buttons ======
+    startBtn.addEventListener("click", startSession);
+    stopBtn.addEventListener("click", stopSession);
+    muteBtn.addEventListener("click", () => {
+      muted = !muted;
+      muteBtn.textContent = muted ? "🔇 Voice: OFF" : "🔊 Voice: ON";
+    });
+
+    window.addEventListener("load", async () => {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        setStatus("Speech recognition not supported");
+        startBtn.disabled = true;
+        return;
+      }
+      setStatus("Idle - Click Start");
+    });
+  </script>
+</body>
+</html>
